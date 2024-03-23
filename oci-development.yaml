@@ -23,3 +23,6 @@ spec:
     kind: OCIRepository
     name: development
   path: ./
+  postBuild:
+    substitute:
+      environment: development
