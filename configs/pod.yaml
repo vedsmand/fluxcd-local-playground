@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podinfo
+spec:
+  containers:
+    - name: podinfo
+      image: stefanprodan/podinfo
+      ports:
+        - name: podinfo
+          containerPort: 80
+          protocol: TCP
