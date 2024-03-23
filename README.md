@@ -29,5 +29,5 @@ make install-playground
 
 ### Cleanup
 ```bash
-kind delete cluster --name=oci
+make clean
 ```
