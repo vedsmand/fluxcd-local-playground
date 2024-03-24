@@ -1,5 +1,5 @@
 # fluxcd-playground
-this repo is intended to be used as a playground for trying out different aspects of the fluxcd project.  
+this repo is intended to be used as a playground for trying out different stuff of the fluxcd project.  
 follow [this link](https://fluxcd.io/)  for official fluxcd documentation
 
 ## setup infrastructure
