@@ -1,0 +1,28 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: production
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: oci://kind-registry:5000/manifests/demo-config
+  insecure: true
+  ref:
+    tag: stable
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: prod-stack
+  namespace: flux-system
+spec:
+  interval: 10m
+  targetNamespace: production
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: production
+  path: ./
+  postBuild:
+    substitute:
+      environment: "production"
